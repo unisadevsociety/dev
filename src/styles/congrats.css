@@ -1,0 +1,55 @@
+.congratsAnimation3 {
+  width: 25vw;
+  margin-top: -25vh;
+  margin-bottom: 5vh;
+}
+.congratswrapper {
+  width: 100vw;
+  background-color: #e3e3e3;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.congratstext {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.goToHemoButton {
+  text-decoration: none;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 1.2rem;
+  color: white;
+}
+.goToHemoButtonBorder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10vw;
+  height: 5vh;
+  background-color: black;
+  border-radius: 0.5vw;
+}
+.goToHemoButtonBorder:hover {
+  width: 8.5vw;
+  height: 5.5vh;
+  background-color: rgb(71, 71, 90);
+}
+@media (max-width: 767px) {
+  .goToHemoButton {
+    font-size: 0.8rem;
+  }
+  .goToHemoButtonBorder {
+    width: 22vw;
+    height: 4vh;
+    border-radius: 1vw;
+  }
+  .goToHemoButtonBorder:hover {
+    width: 22.5vw;
+    height: 4.5vh;
+  }
+}

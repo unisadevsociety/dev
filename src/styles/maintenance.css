@@ -1,0 +1,45 @@
+.maintancontainer {
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #e3e3e3;
+}
+
+.maintainAnimation {
+  width: 40vw;
+}
+.texttextmaintaine {
+  font-family: "Space Mono", monospace;
+  font-size: 1.9rem;
+}
+.goToHemoButtonBorders {
+  width: 13vw;
+  height: 5vh;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5vw;
+}
+.goToHemoButtonBorders:hover {
+  width: 13.5vw;
+  height: 5.5vh;
+}
+@media (max-width: 767px) {
+  .texttextmaintaine {
+    font-size: 1rem;
+  }
+  .goToHemoButtonBorders {
+    width: 25vw;
+    height: 5vh;
+
+    border-radius: 1.5vw;
+  }
+  .goToHemoButtonBorders:hover {
+    width: 25.5vw;
+    height: 6vh;
+  }
+}

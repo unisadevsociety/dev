@@ -1,0 +1,291 @@
+.homeMainContainer {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: 100vw;
+  background-color: #e3e3e3;
+}
+.heroContainer {
+  width: 100vw;
+  height: 45vh;
+  display: flex;
+}
+.leftHeroSide {
+  width: 60vw;
+  height: 45vh;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.typewriterText {
+  display: inline-block;
+  font-family: monospace;
+  border-right: 5px solid;
+  width: 23vw;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 4s steps(14) infinite alternate,
+    cursor 0.4s step-end infinite alternate;
+}
+.text_welcome {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-left: 5vw;
+  margin-top: 4vh;
+}
+@keyframes cursor {
+  50% {
+    border-color: transparent;
+  }
+}
+@keyframes typing {
+  50% {
+    width: 0;
+  }
+}
+.joinusButton {
+  width: 17vw;
+  height: 5vh;
+  border: 1px dotted black;
+  border-radius: 0.7vw;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+.joinusButton:hover {
+  width: 17.5vw;
+  height: 5.5vh;
+}
+.joinusButtonButton {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+}
+.rightHeroSide {
+  width: 40vw;
+  height: 45vh;
+  /* background-color: green; */
+}
+.animation1 {
+  width: 13vw;
+  margin-left: 12vw;
+}
+.secondHeroSection {
+  width: 100vw;
+  height: 40vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.statsContainer {
+  width: 100vw;
+  height: 20vh;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.handshakeImage {
+  margin-top: -3vh;
+  height: 15vh;
+}
+.membersCount {
+  margin-top: -3vh;
+  font-size: 3rem;
+  font-family: "Space Mono", monospace;
+}
+.membersCount2 {
+  margin-top: -3vh;
+  font-size: 3rem;
+  font-family: "Space Mono", monospace;
+}
+.upcomingevents {
+  font-size: 2.5rem;
+  font-family: "Space Mono", monospace;
+  display: flex;
+}
+.upcomingevents3 {
+  animation: dimeffect 3s infinite linear;
+}
+@keyframes dimeffect {
+  50% {
+    color: #e3e3e3;
+  }
+}
+.MembersAffiliationcount {
+  display: flex;
+}
+.eventsImage {
+  height: 10vh;
+}
+.StatsimageImage {
+  height: 5vh;
+}
+.secondHeroSectionwrappersection {
+  display: flex;
+}
+.handshakeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6vh;
+}
+.benefitsTab {
+  width: 100vw;
+
+  background-color: #e3e3e3;
+}
+.benefitsTabAnim1 {
+  width: 25vw;
+}
+.benefitsTabAnimationhackerthon {
+  width: 44vw;
+}
+.benefitsTabAnimationGamesanimation {
+  width: 35vw;
+}
+.benefitsTabRow1 {
+  width: 100vw;
+
+  display: flex;
+  justify-content: space-evenly;
+}
+.benefitsTabAnim1 {
+  display: flex;
+  align-items: center;
+}
+.benefitsTabAnim2 {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.benefitsTabAnim3 {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.benefitsTabAnimation3 {
+  width: 25vw;
+}
+.benefitsTabText {
+  font-size: 1.2rem;
+  font-family: "Space Mono", monospace;
+  margin-right: 5vw;
+  text-align: center;
+  margin-top: 2vh;
+}
+
+@media (max-width: 767px) {
+  .heroContainer {
+    flex-direction: column-reverse;
+    align-items: center;
+    height: 70vh;
+  }
+  .text_Hie {
+    font-size: 0.8rem;
+    width: 35vw;
+  }
+  .text_welcome {
+    font-size: 0.8rem;
+    margin-left: 0vw;
+    margin-top: 0vh;
+    text-align: center;
+  }
+  .joinusButton {
+    width: 25vw;
+    height: 3vh;
+    border: 1px dotted black;
+    border-radius: 0.7vw;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.5rem;
+    margin-bottom: 1.5vh;
+  }
+  .joinusButton:hover {
+    width: 25.5vw;
+    height: 3.5vh;
+  }
+  .animation1 {
+    width: 35vw;
+    margin-left: -0.7vw;
+  }
+  .StatsimageImage {
+    height: 3vh;
+  }
+  .statsContainer {
+    flex-direction: column;
+  }
+  .secondHeroSection {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 45vh;
+  }
+  .handshakeImage {
+    height: 15vh;
+  }
+  .membersCount {
+    font-size: 1.5rem;
+  }
+
+  .membersCount2 {
+    font-size: 1.5rem;
+  }
+  .secondHeroSectionwrappersection {
+    height: 10vh;
+    margin-top: 0vh;
+  }
+  .eventsImage {
+    width: 17vw;
+    height: auto;
+  }
+  .upcomingevents {
+    font-size: 1.5rem;
+  }
+  .upcomingevents3 {
+    font-size: 1.5rem;
+  }
+  .handshakeContainer {
+    margin-top: 3vh;
+  }
+  .handshakeContainer1 {
+    margin-top: 9vh;
+  }
+  .benefitsTabText {
+    font-size: 0.8rem;
+    font-family: "Space Mono", monospace;
+    margin-right: 4vw;
+    margin-left: 1vw;
+    text-align: center;
+    margin-top: 2vh;
+  }
+  .benefitsTabAnimationGamesanimation {
+    width: 55vw;
+  }
+  .benefitsTabAnimationhackerthon {
+    width: 75vw;
+  }
+  .benefitsTabAnimation3 {
+    width: 42vw;
+  }
+  .benefitsTabAnimation3last {
+    width: 50vw;
+    margin-top: -3vh;
+  }
+  .benefitsTabTextlast {
+    margin-top: -1.5vh;
+  }
+}

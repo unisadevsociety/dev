@@ -1,0 +1,4 @@
+body {
+  overflow-y: scroll; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}

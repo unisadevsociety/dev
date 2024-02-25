@@ -1,0 +1,82 @@
+.footer {
+  background: white;
+  color: black;
+  padding: 50px 0;
+}
+
+.footer h3 {
+  color: black;
+  text-align: center;
+}
+
+.footer .row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.social-icons {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  max-width: 200px;
+}
+
+.social-icons li {
+  margin-right: 10px;
+}
+
+.social-icons a {
+  color: black;
+  text-align: center;
+  font-size: 24px;
+}
+
+.quick-links {
+  list-style: none;
+  padding: 0;
+}
+
+.quick-links li {
+  margin-bottom: 10px;
+}
+
+.quick-links a {
+  color: black;
+  text-decoration: none;
+}
+
+.rights {
+  text-align: center;
+}
+
+.black-text {
+  color: black;
+}
+.usdicon {
+  width: 1.5vw;
+}
+
+.connectwithus {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 50vw;
+}
+.quicklinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 50vw;
+}
+.footerdivider {
+  display: flex;
+}
+
+@media (max-width: 767px) {
+  .usdicon {
+    width: 4.5vw;
+  }
+}
