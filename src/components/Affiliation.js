@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
+// affiliation.js
+import React, { useState } from "react";
 import firebase from "firebase/compat/app";
 import "firebase/compat/database";
 import Lottie from "lottie-react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import animationData from "../animation/anim (1).json";
-import Navbar from "./Navbar";
+
+import Navbar from "./Navbar"; // Import the Navbar component
 import Footer from "./Footer";
 
 function Affiliation({ onRegister }) {
@@ -12,83 +14,65 @@ function Affiliation({ onRegister }) {
   const [surname, setSurname] = useState("");
   const [studentEmail, setStudentEmail] = useState("");
   const [stream, setStream] = useState("");
-  const [registered, setRegistered] = useState("yes");
-  const [startedDegreeIn, setStartedDegreeIn] = useState("");
+  const [registered, setRegistered] = useState("yes"); // Default to "yes"
   const [errorMessage, setErrorMessage] = useState("");
 
-  useEffect(() => {
-    fetchRegisteredMembers();
-    fetchModifiedMemberCount();
-  }, []);
-
-  const fetchRegisteredMembers = () => {
-    const usersRef = firebase.database().ref("users");
-    usersRef.once("value", (snapshot) => {
-      const count = snapshot.numChildren();
-      console.log("Total Registered Members:", count);
-    });
-  };
-
-  const fetchModifiedMemberCount = () => {
-    const usersRef = firebase.database().ref("users");
-    usersRef.once("value", (snapshot) => {
-      const currentTime = new Date().getFullYear();
-      snapshot.forEach((childSnapshot) => {
-        const startedYear = childSnapshot.val().startedDegreeIn;
-        if (currentTime - startedYear > 3) {
-          // User has been registered for more than 3 years without re-registering
-          // Perform necessary operations
-          // Here you can remove the user or update their registration status
-        }
-      });
-    });
-  };
-
   const handleRegister = () => {
+    // Validate name
     if (!name.trim()) {
       setErrorMessage("Please enter your name.");
       return;
     }
 
+    // Validate surname
     if (!surname.trim()) {
       setErrorMessage("Please enter your surname.");
       return;
     }
 
+    // Validate stream
     if (!stream) {
       setErrorMessage("Please select a stream.");
       return;
     }
 
+    // Validate student email
     if (!studentEmail.endsWith("@mylife.unisa.ac.za")) {
       setErrorMessage("Please enter a valid UNISA student email.");
       return;
     }
 
-    const user = {
-      name,
-      surname,
-      studentEmail,
-      stream,
-      registered,
-      startedDegreeIn,
-    };
+    // Check if the email already exists
+    const usersRef = firebase.database().ref("users");
+    usersRef
+      .orderByChild("studentEmail")
+      .equalTo(studentEmail)
+      .once("value", (snapshot) => {
+        if (snapshot.exists()) {
+          setErrorMessage("This email is already registered.");
+        } else {
+          // Reset error message
+          setErrorMessage("");
 
-    onRegister(user)
-      .then(() => {
-        window.location.href = "/dev/congratulations";
-      })
-      .catch((error) => {
-        console.error("Error registering user:", error);
+          // Create user object
+          const user = { name, surname, studentEmail, stream, registered };
+
+          // Push user data to the database and handle registration
+          onRegister(user)
+            .then(() => {
+              // Navigate to /dev/congratulations
+              window.location.href = "/dev/congratulations";
+            })
+            .catch((error) => {
+              console.error("Error registering user:", error);
+            });
+        }
       });
   };
 
+  // Function to handle radio button change
   const handleRegisteredChange = (event) => {
     setRegistered(event.target.value);
-  };
-
-  const handleStartedDegreeInChange = (event) => {
-    setStartedDegreeIn(event.target.value);
   };
 
   return (
@@ -145,29 +129,6 @@ function Affiliation({ onRegister }) {
                 <option value="Other">Other</option>
               </select>
               <br />
-              <label
-                htmlFor="startedDegreeIn"
-                className="text-black font-weight-bold"
-              >
-                Started degree in
-              </label>
-              <select
-                id="startedDegreeIn"
-                className="form-select"
-                value={startedDegreeIn}
-                onChange={handleStartedDegreeInChange}
-              >
-                <option value="">Select Year</option>
-                {Array.from(
-                  { length: 25 },
-                  (_, i) => new Date().getFullYear() - i
-                ).map((year) => (
-                  <option key={year} value={year}>
-                    {year}
-                  </option>
-                ))}
-              </select>
-              <br />
               <div>
                 <label>
                   Are you currently registered in this academic period?
@@ -201,10 +162,11 @@ function Affiliation({ onRegister }) {
               )}
               <br />
               <div className="text-center">
+                {/* Disable button if not registered */}
                 <button
                   className="btn btn-primary btn-lg"
                   onClick={handleRegister}
-                  disabled={registered === "no" || errorMessage}
+                  disabled={registered === "no"}
                   style={{ backgroundColor: registered === "no" ? "grey" : "" }}
                 >
                   Register
