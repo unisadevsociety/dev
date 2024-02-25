@@ -1,3 +1,4 @@
+// app.js
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
@@ -42,11 +43,11 @@ function App() {
     usersRef.push(user);
 
     // Update affiliation count in Firebase
-    db.ref("counters/affiliation")
+    return db
+      .ref("counters/affiliation")
       .set(affiliationCount + 1)
       .then(() => {
-        // Navigate to Congratulations page after updating count
-        window.location.href = "/congratulations"; // Use window.location.href to navigate
+        // No need to navigate here since it's handled in Affiliation component
       })
       .catch((error) => {
         console.error("Error updating count:", error);
