@@ -126,6 +126,9 @@ function Affiliation({ onRegister }) {
                 <option value="MIS">MIS</option>
                 <option value="MAS">MAS</option>
                 <option value="COM">COM</option>
+                <option value="INF">INF</option>
+                <option value="AMC">AMC</option>
+                <option value="MAP">MAP</option>
                 <option value="Other">Other</option>
               </select>
               <br />
