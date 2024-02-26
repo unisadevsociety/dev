@@ -48,6 +48,7 @@ function App() {
       .set(affiliationCount + 1)
       .then(() => {
         // No need to navigate here since it's handled in Affiliation component
+        window.location.href = "https://unisadevsociety.github.io/redirect/";
       })
       .catch((error) => {
         console.error("Error updating count:", error);
@@ -68,7 +69,7 @@ function App() {
             path="/affiliation"
             element={<Affiliation onRegister={handleRegistration} />}
           />
-          <Route exact path="/congratulations" element={<Congratulations />} />
+          {/* <Route exact path="/congratulations" element={<Congratulations />} /> */}
           <Route exact path="/maintenancePage" element={<MaintenancePage />} />
         </Routes>
       </div>
