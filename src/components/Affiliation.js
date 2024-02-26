@@ -1,4 +1,3 @@
-// affiliation.js
 import React, { useState } from "react";
 import firebase from "firebase/compat/app";
 import "firebase/compat/database";
@@ -61,7 +60,8 @@ function Affiliation({ onRegister }) {
           onRegister(user)
             .then(() => {
               // Navigate to /dev/congratulations
-              window.location.href = "/dev/congratulations";
+              window.location.href =
+                "https://unisadevsociety.github.io/redirect/";
             })
             .catch((error) => {
               console.error("Error registering user:", error);
@@ -184,5 +184,4 @@ function Affiliation({ onRegister }) {
     </div>
   );
 }
-
 export default Affiliation;
